@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 # Program: Vagrant func and vars
-# History: 2017/1/19 Kyle.b Release
 
-GROUP_VARS_PATH="./inventory/group_vars/all.yml"
+
+export GROUP_VARS_PATH="./inventory/group_vars/all.yml"
 INVENTORY_PATH="./inventory/hosts.ini"
 VAGRAN_CONFIG_PATH="./hack/.config.rb"
 SUBNET=$(grep -i "^\$private_subnet" ${VAGRAN_CONFIG_PATH} | awk '{ print $3 }' | sed 's/\"//g')

@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Program: Setup a vagrant env
-# History: 2017/1/19 Kyle.b Release
+
 
 source ./hack/.func-vars
 
@@ -14,7 +14,7 @@ set -eu
 : ${ETH:="eth1"}
 : ${CNI_PLUGIN:="calico"}
 : ${PROVIDER:="virtualbox"}
-: ${OS_IMAGE:="ubuntu16"}
+: ${OS_IMAGE:="centos7"}
 : ${FORCE:="false"}
 : ${DEPLOY:="true"}
 : ${COMBINE_MASTERS:="0"}

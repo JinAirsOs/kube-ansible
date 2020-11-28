@@ -42,31 +42,31 @@ package:
   kubectl:
     name: kubectl
     dir: /opt/kubernetes
-    url: "{{ base.kubectl.url }}/kubernetes-release/release/v{{ base.kubectl.version }}/bin/linux/amd64"
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.19.4/bin/linux/amd64"
     symlinks:
       - kubectl
     file: kubectl
   kubelet:
     name: kubelet
     dir: /opt/kubernetes
-    url: "{{ base.kubelet.url }}/kubernetes-release/release/v{{ base.kubelet.version }}/bin/linux/amd64"
+    url: "https://storage.googleapis.com/kubernetes-release/release/v1.19.4/bin/linux/amd64"
     symlinks:
       - kubelet
     file: kubelet
   etcd:
     name: etcd
     dir: /opt/etcd
-    url: "{{ base.etcd.url }}/coreos/etcd/releases/download/v{{ base.etcd.version }}"
+    url: "https://github.com/coreos/etcd/releases/download/v3.3.12"
     unarchive:
       extra_opt: "['--strip-components=1']"
     symlinks:
       - etcd
       - etcdctl
-    file: "etcd-v{{ base.etcd.version }}-linux-amd64.tar.gz"
+    file: "etcd-v3.3.12-linux-amd64.tar.gz"
   docker:
     name: docker
     dir: /opt/docker
-    url: "{{ base.docker.url }}/linux/static/stable/x86_64"
+    url: "https://download.docker.com/linux/static/stable/x86_64"
     unarchive:
       extra_opt: "['--strip-components=1']"
     symlinks:
@@ -78,39 +78,39 @@ package:
       - containerd-shim
       - runc
       - ctr
-    file: "docker-{{ base.docker.version }}.tgz"
+    file: "docker-18.09.3.tgz"
   nvidia_docker:
     name: nvidia-docker
     dir: /opt/nvidia-docker
-    url: "{{ base.nvidia_docker.url }}/kairen/k8s-manual-files/releases/download/nvidia"
+    url: "https://github.com/kairen/k8s-manual-files/releases/download/nvidia"
     unarchive:
       extra_opt: "['--strip-components=1']"
     symlinks:
       - usr/bin/nvidia-docker
-    file: "nvidia-docker-v{{ base.nvidia_docker.version }}_amd64.tar.gz"
+    file: "nvidia-docker-v2.0.3_amd64.tar.gz"
   libnvidia_container:
     name: libnvidia-container
     dir: /opt/libnvidia-container
-    url: "{{ base.libnvidia_container.url }}/kairen/k8s-manual-files/releases/download/nvidia"
+    url: "https://github.com/kairen/k8s-manual-files/releases/download/nvidia"
     unarchive:
       extra_opt: "['--strip-components=1']"
     symlinks:
       - usr/local/bin/nvidia-container-cli
-    file: "libnvidia-container-{{ base.libnvidia_container.version }}_amd64.tar.xz"
+    file: "libnvidia-container-1.0.0-rc.2_amd64.tar.xz"
   nvidia_container_runtime:
     name: nvidia-container-runtime
     dir: /opt/nvidia-container-runtime
-    url: "{{ base.nvidia_container_runtime.url }}/kairen/k8s-manual-files/releases/download/nvidia"
+    url: "https://github.com/kairen/k8s-manual-files/releases/download/nvidia"
     unarchive:
       extra_opt: "['--strip-components=1']"
     symlinks:
       - usr/bin/nvidia-container-runtime
       - usr/bin/nvidia-container-runtime-hook
-    file: "nvidia-container-runtime-v{{ base.nvidia_container_runtime.version }}_amd64.tar.gz"
+    file: "nvidia-container-runtime-v1.4.0.1_amd64.tar.gz"
   containerd:
     name: containerd
     dir: /opt/containerd
-    url: "{{ base.containerd.url }}/cri-containerd-release"
+    url: "https://storage.googleapis.com/cri-containerd-release"
     unarchive:
       extra_opt: "['--strip-components=0']"
     symlinks:
@@ -122,34 +122,34 @@ package:
       - usr/local/bin/critest
       - usr/local/bin/ctr
       - usr/local/sbin/runc
-    file: "cri-containerd-cni-{{ base.containerd.version }}.linux-amd64.tar.gz"
+    file: "cri-containerd-cni-1.2.4.linux-amd64.tar.gz"
   cni:
     name: cni
     dir: /opt/cni/bin
-    url: "{{ base.cni.url }}/containernetworking/plugins/releases/download/v{{ base.cni.version }}"
+    url: "https://github.com/containernetworking/plugins/releases/download/v0.6.0"
     unarchive:
       extra_opt: "['--strip-components=0']"
-    file: "cni-plugins-amd64-v{{ base.cni.version }}.tgz"
+    file: "cni-plugins-amd64-v0.6.0.tgz"
   helm:
     name: helm
     dir: /opt/helm
-    url: "{{ base.helm.url }}"
+    url: "https://kubernetes-helm.storage.googleapis.com"
     unarchive:
       extra_opt: "['--strip-components=1']"
     symlinks:
       - helm
-    file: "helm-v{{ base.helm.version }}-linux-amd64.tar.gz"
+    file: "helm-v2.9.1-linux-amd64.tar.gz"
   cfssl:
     name: cfssl
     dir: /opt/cfssl
-    url: "{{ base.cfssl.url }}/R{{ base.cfssl.version }}"
+    url: "https://pkg.cfssl.org/R1.2"
     symlinks:
       - cfssl
     file: cfssl_linux-amd64
   cfssljson:
     name: cfssljson
     dir: /opt/cfssl
-    url: "{{ base.cfssljson.url }}/R{{ base.cfssljson.version }}"
+    url: "https://pkg.cfssl.org/R1.2"
     symlinks:
       - cfssljson
     file: cfssljson_linux-amd64

@@ -27,7 +27,7 @@
     group: root
     mode: 0644
 
-- name: install and enbale SystemD swapoff.service
+- name: install and enable SystemD swapoff.service
   systemd:
     name: swapoff
     daemon_reload: yes

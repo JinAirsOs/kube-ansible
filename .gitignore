@@ -13,3 +13,4 @@ extra-playbooks-bk/
 hosts.ini
 openrc
 .idea
+venv/

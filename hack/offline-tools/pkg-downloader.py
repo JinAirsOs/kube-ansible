@@ -1,13 +1,14 @@
 # coding=utf-8
+# python3.9
 
 import os
-import urllib2
+import urllib.request as urllib2
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
-TMPL_FILE = '../../roles/download/package/defaults/main.yml'
+TMPL_FILE = './main.yml'
 YML_FILE = './pkg.yml'
-PKG_HOME_DIR = os.environ.get('PKG_HOME_DIR','/usr/local/apache2/htdocs')
+PKG_HOME_DIR = os.environ.get('PKG_HOME_DIR','/Users/zhpan/kube-ansible/hack/offline-tools/static')
 PATH = os.path.dirname(os.path.abspath(__file__))
 TMPL_ENV = Environment(
     autoescape=False,
@@ -22,6 +23,7 @@ def create_download_yml():
     tmpl = open(TMPL_FILE, 'r')
     pkg_yml = yaml.load(tmpl)
     with open(YML_FILE, 'w') as output:
+        print(PATH)
         yml = TMPL_ENV.get_template(TMPL_FILE).render(pkg_yml)
         output.write(yml)
 
@@ -32,12 +34,13 @@ def download_pkg(yml_file):
     with open(yml_file, 'r') as f:
         yml = yaml.load(f)
         downloads = yml['package']
-        bases = yml['bases']
+        base = yml['base']
         for key, value in zip(downloads, downloads.values()) :
-            for item in value['items']:
+            print(value)
+            for item in value['symlinks']:
                 print("Downloading with {0} ...".format(item))
 
-                path = value['url'].replace("{0}".format(bases[key]['url']), '')
+                path = value['url'].replace("{0}".format(base[key]['url']), '')
                 download_path = "{0}{1}".format(PKG_HOME_DIR, path)
 
                 if not os.path.exists(download_path):

@@ -2,7 +2,7 @@
 # python3.9
 
 import os
-import urllib.request as urllib2
+import urllib2
 import yaml
 from jinja2 import Environment, FileSystemLoader
 

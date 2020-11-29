@@ -79,34 +79,6 @@ package:
       - runc
       - ctr
     file: "docker-18.09.3.tgz"
-  nvidia_docker:
-    name: nvidia-docker
-    dir: /opt/nvidia-docker
-    url: "https://github.com/kairen/k8s-manual-files/releases/download/nvidia"
-    unarchive:
-      extra_opt: "['--strip-components=1']"
-    symlinks:
-      - usr/bin/nvidia-docker
-    file: "nvidia-docker-v2.0.3_amd64.tar.gz"
-  libnvidia_container:
-    name: libnvidia-container
-    dir: /opt/libnvidia-container
-    url: "https://github.com/kairen/k8s-manual-files/releases/download/nvidia"
-    unarchive:
-      extra_opt: "['--strip-components=1']"
-    symlinks:
-      - usr/local/bin/nvidia-container-cli
-    file: "libnvidia-container-1.0.0-rc.2_amd64.tar.xz"
-  nvidia_container_runtime:
-    name: nvidia-container-runtime
-    dir: /opt/nvidia-container-runtime
-    url: "https://github.com/kairen/k8s-manual-files/releases/download/nvidia"
-    unarchive:
-      extra_opt: "['--strip-components=1']"
-    symlinks:
-      - usr/bin/nvidia-container-runtime
-      - usr/bin/nvidia-container-runtime-hook
-    file: "nvidia-container-runtime-v1.4.0.1_amd64.tar.gz"
   containerd:
     name: containerd
     dir: /opt/containerd

@@ -28,9 +28,6 @@ base:
   cni:
     url: "https://github.com"
     version: 0.6.0
-  helm:
-    url: "https://kubernetes-helm.storage.googleapis.com"
-    version: 2.9.1
   cfssl:
     url: "https://pkg.cfssl.org"
     version: 1.2
@@ -79,34 +76,6 @@ package:
       - runc
       - ctr
     file: "docker-{{ base.docker.version }}.tgz"
-  nvidia_docker:
-    name: nvidia-docker
-    dir: /opt/nvidia-docker
-    url: "{{ base.nvidia_docker.url }}/kairen/k8s-manual-files/releases/download/nvidia"
-    unarchive:
-      extra_opt: "['--strip-components=1']"
-    symlinks:
-      - usr/bin/nvidia-docker
-    file: "nvidia-docker-v{{ base.nvidia_docker.version }}_amd64.tar.gz"
-  libnvidia_container:
-    name: libnvidia-container
-    dir: /opt/libnvidia-container
-    url: "{{ base.libnvidia_container.url }}/kairen/k8s-manual-files/releases/download/nvidia"
-    unarchive:
-      extra_opt: "['--strip-components=1']"
-    symlinks:
-      - usr/local/bin/nvidia-container-cli
-    file: "libnvidia-container-{{ base.libnvidia_container.version }}_amd64.tar.xz"
-  nvidia_container_runtime:
-    name: nvidia-container-runtime
-    dir: /opt/nvidia-container-runtime
-    url: "{{ base.nvidia_container_runtime.url }}/kairen/k8s-manual-files/releases/download/nvidia"
-    unarchive:
-      extra_opt: "['--strip-components=1']"
-    symlinks:
-      - usr/bin/nvidia-container-runtime
-      - usr/bin/nvidia-container-runtime-hook
-    file: "nvidia-container-runtime-v{{ base.nvidia_container_runtime.version }}_amd64.tar.gz"
   containerd:
     name: containerd
     dir: /opt/containerd

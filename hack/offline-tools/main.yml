@@ -130,15 +130,6 @@ package:
     unarchive:
       extra_opt: "['--strip-components=0']"
     file: "cni-plugins-amd64-v{{ base.cni.version }}.tgz"
-  helm:
-    name: helm
-    dir: /opt/helm
-    url: "{{ base.helm.url }}"
-    unarchive:
-      extra_opt: "['--strip-components=1']"
-    symlinks:
-      - helm
-    file: "helm-v{{ base.helm.version }}-linux-amd64.tar.gz"
   cfssl:
     name: cfssl
     dir: /opt/cfssl

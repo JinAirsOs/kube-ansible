@@ -8,7 +8,7 @@ from jinja2 import Environment, FileSystemLoader
 
 TMPL_FILE = './main.yml'
 YML_FILE = './pkg.yml'
-PKG_HOME_DIR = os.environ.get('PKG_HOME_DIR','/Users/zhpan/kube-ansible/hack/offline-tools/static')
+PKG_HOME_DIR = os.environ.get('PKG_HOME_DIR','/root/tmp')
 PATH = os.path.dirname(os.path.abspath(__file__))
 TMPL_ENV = Environment(
     autoescape=False,

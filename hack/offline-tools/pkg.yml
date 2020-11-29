@@ -130,15 +130,6 @@ package:
     unarchive:
       extra_opt: "['--strip-components=0']"
     file: "cni-plugins-amd64-v0.6.0.tgz"
-  helm:
-    name: helm
-    dir: /opt/helm
-    url: "https://kubernetes-helm.storage.googleapis.com"
-    unarchive:
-      extra_opt: "['--strip-components=1']"
-    symlinks:
-      - helm
-    file: "helm-v2.9.1-linux-amd64.tar.gz"
   cfssl:
     name: cfssl
     dir: /opt/cfssl

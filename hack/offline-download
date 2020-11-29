@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# @Author: panzhendong02@meituan.com
+# pwd: hack/
+# Program: Setup offline download
+
+source ../venv/bin/activate
+
+rm offline-tools/main.yml
+cp ../roles/download/package/defaults/main.yml offline-tools/
+cd offline-tools && python pkg-downloader.py

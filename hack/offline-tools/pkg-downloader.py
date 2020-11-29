@@ -37,19 +37,19 @@ def download_pkg(yml_file):
         base = yml['base']
         for key, value in zip(downloads, downloads.values()) :
             print(value)
-            for item in value['symlinks']:
-                print("Downloading with {0} ...".format(item))
+            item = value['file']
+            print("Downloading with {0} ...".format(item))
 
-                path = value['url'].replace("{0}".format(base[key]['url']), '')
-                download_path = "{0}{1}".format(PKG_HOME_DIR, path)
+            path = value['url'].replace("{0}".format(base[key]['url']), '')
+            download_path = "{0}{1}".format(PKG_HOME_DIR, path)
 
-                if not os.path.exists(download_path):
-                    os.makedirs(download_path)
+            if not os.path.exists(download_path):
+                os.makedirs(download_path)
 
-                item_file = urllib2.urlopen("{0}/{1}".format(value['url'], item))
-                data = item_file.read()
-                with open("{0}/{1}".format(download_path, item), "wb") as code:
-                    code.write(data)
+            item_file = urllib2.urlopen("{0}/{1}".format(value['url'], item))
+            data = item_file.read()
+            with open("{0}/{1}".format(download_path, item), "wb") as code:
+                code.write(data)
 
 def main():
     create_download_yml()

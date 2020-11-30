@@ -15,6 +15,9 @@ container_network: calico
 # Kubernetes HA extra variables.
 vip_interface: ""
 vip_address: 172.16.35.10
+lb_secure_port: 6443
+
+#offline deploy
 
 # Kubernetes extra addons
 enable_ingress: false

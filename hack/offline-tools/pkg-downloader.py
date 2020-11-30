@@ -1,8 +1,10 @@
 # coding=utf-8
-# python3.9
+# python2
+# pip install pyyaml
+# pip install jinja2
 
 import os
-import urllib.request as urllib2
+import urllib2
 import yaml
 from jinja2 import Environment, FileSystemLoader
 

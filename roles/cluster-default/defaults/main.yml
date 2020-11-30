@@ -29,8 +29,8 @@ cluster_domain_name: cluster.local
 enable_keepalived: false
 enable_haproxy: false
 vip_interface: ""
-vip_address: 172.16.35.10
-lb_secure_port: 6443
+vip_address: "{{ vip_address }}"
+lb_secure_port: "{{ lb_secure_port }}"
 lb_api_url: "https://{{ vip_address }}:{{ lb_secure_port }}"
 
 # etcd extra variables.
@@ -87,6 +87,6 @@ proxy_env:
 #############
 
 # Download pkg from custom URL.
-repos_offline: false
-repos_port: 4040
-repos_offline_url: "http://172.16.35.9:{{ repos_port }}"
+repos_offline: true
+repos_port: 80
+repos_offline_url: "http://10.72.220.199:{{ repos_port }}"

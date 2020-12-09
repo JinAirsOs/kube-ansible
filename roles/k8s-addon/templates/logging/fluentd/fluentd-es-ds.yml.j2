@@ -23,7 +23,7 @@ spec:
       serviceAccountName: fluentd-es
       containers:
       - name: fluentd-es
-        image: {{ kube_image_registry }}/fluentd-elasticsearch:v2.4.0
+        image: {{ k8s_gcr_io }}/fluentd-elasticsearch:v2.4.0
         env:
         - name: FLUENTD_ARGS
           value: --no-supervisor -q

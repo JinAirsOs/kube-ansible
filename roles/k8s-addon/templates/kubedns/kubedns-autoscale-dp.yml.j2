@@ -30,7 +30,7 @@ spec:
         fsGroup: 65534
       containers:
       - name: autoscaler
-        image: {{ kube_image_registry }}/cluster-proportional-autoscaler-amd64:1.4.0
+        image: {{ k8s_gcr_io }}/cluster-proportional-autoscaler-amd64:1.4.0
         resources:
         command:
           - /cluster-proportional-autoscaler

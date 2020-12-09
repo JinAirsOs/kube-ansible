@@ -13,7 +13,7 @@ spec:
   priorityClassName: system-cluster-critical
   containers:
   - name: kube-scheduler
-    image: {{ kube_image_registry }}/kube-scheduler-amd64:v{{ kube_version }}
+    image: {{ k8s_gcr_io }}/kube-scheduler-amd64:v{{ kube_version }}
     command:
       - kube-scheduler
       - --v={{ log_level }}

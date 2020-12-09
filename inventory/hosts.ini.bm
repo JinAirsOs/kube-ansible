@@ -1,0 +1,13 @@
+[etcds]
+10.29.94.23 ansible_user=panzhendong02 ansible_password=Pi3.14159
+
+[masters]
+10.29.94.23 ansible_user=panzhendong02 ansible_password=Pi3.14159
+
+[nodes]
+10.29.94.24 ansible_user=panzhendong02 ansible_password=Pi3.14159
+10.29.94.21 ansible_user=panzhendong02 ansible_password=Pi3.14159
+
+[kube-cluster:children]
+masters
+nodes

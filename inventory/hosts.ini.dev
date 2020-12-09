@@ -1,0 +1,12 @@
+[etcds]
+10.72.239.[238:238] hostname=yp-mkebuilder-buildserver-dev04 ansible_user=panzhendong02 ansible_password=Pi3.14159
+
+[masters]
+10.72.239.[238:238] hostname=yp-mkebuilder-buildserver-dev04 ansible_user=panzhendong02 ansible_password=Pi3.14159
+
+[nodes]
+10.72.239.[231:231] hostname=yp-mkebuilder-buildserver-dev05 ansible_user=panzhendong02 ansible_password=Pi3.14159
+
+[kube-cluster:children]
+masters
+nodes

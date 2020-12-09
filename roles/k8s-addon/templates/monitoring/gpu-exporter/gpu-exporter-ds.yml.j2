@@ -25,7 +25,7 @@ spec:
       hostPID: true
       containers:
       - name: node-gpu-exporter
-        image: kairen/gpu-prometheus-exporter:v0.1.0
+        image: {{ docker_io }}/kairen/gpu-prometheus-exporter:v0.1.0
         ports:
         - containerPort: 9445
           hostPort: 9445

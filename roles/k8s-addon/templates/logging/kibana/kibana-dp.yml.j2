@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: kibana-logging
-        image: docker.elastic.co/kibana/kibana:7.4.0
+        image: {{ docker_elastic_co }}/kibana/kibana:7.4.0
         resources:
           limits:
             cpu: 1000m

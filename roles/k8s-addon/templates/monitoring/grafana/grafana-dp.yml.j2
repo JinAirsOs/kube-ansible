@@ -20,7 +20,7 @@ spec:
         beta.kubernetes.io/os: linux
       containers:
       - name: grafana
-        image: grafana/grafana:6.0.1
+        image: {{ docker_io }}/grafana/grafana:6.0.1
         env:
         - name: GF_SECURITY_ADMIN_USER
           valueFrom:

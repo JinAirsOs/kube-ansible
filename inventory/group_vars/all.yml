@@ -5,7 +5,8 @@ kube_version: 1.19.4
 k8s_gcr_io: 10.72.220.199:5000
 docker_io: 10.72.220.199:5000
 quay_io: 10.72.220.199:5000
-
+gcr_io: 10.72.220.199:5000
+docker_elastic_co: 10.72.220.199:5000
 # Container runtime,
 # Supported: docker, nvidia-docker, containerd.
 container_runtime: docker

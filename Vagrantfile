@@ -8,7 +8,7 @@ if File.exist?(CONFIG)
   require CONFIG
 end
 
-$os_image = (ENV['OS_IMAGE'] || "ubuntu16").to_sym
+$os_image = (ENV['OS_IMAGE'] || "centos7").to_sym
 $provider = (ENV['PROVIDER'] || "virtualbox").to_sym
 $auto_deploy = (ENV['DEPLOY']|| "true").to_sym
 

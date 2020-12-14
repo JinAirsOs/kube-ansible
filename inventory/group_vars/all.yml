@@ -17,7 +17,7 @@ cni_enable: true
 container_network: calico
 
 # Kubernetes HA extra variables.
-vip_interface: ""
+vip_interface: enp0s3
 vip_address: 172.16.35.10
 lb_secure_port: 6443
 

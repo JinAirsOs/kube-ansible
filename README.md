@@ -176,3 +176,6 @@ $ ansible-playbook -i inventory/hosts.ini reset-cluster.yml
 
 ## Contributing
 Pull requests are always welcome!!! I am always thrilled to receive pull requests.
+
+## Centos
+yum install -y conntrack-tools

@@ -11,5 +11,7 @@
     {% if insecure_registries is defined and  insecure_registries|length  > 0 -%}
     "insecure-registries": [{% for reg in insecure_registries %}"{{ reg }}"{% if not loop.last %}, {% endif %}{% endfor %}],
     {% endif -%}
-    "debug": false
+    "debug": false,
+    "graph": "{{ docker_root_dir }}",
+    "storage-driver": "overlay2"
 }

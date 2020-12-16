@@ -2,6 +2,7 @@
 
 kube_version: 1.19.4
 
+#offline_registry
 k8s_gcr_io: 10.72.220.199:5000
 docker_io: 10.72.220.199:5000
 quay_io: 10.72.220.199:5000
@@ -10,7 +11,8 @@ docker_elastic_co: 10.72.220.199:5000
 # Container runtime,
 # Supported: docker, nvidia-docker, containerd.
 container_runtime: docker
-
+# docker root dir
+docker_root_dir: /var/lib/docker
 # Container network,
 # Supported: calico, flannel.
 cni_enable: true

@@ -23,7 +23,7 @@ vip_interface: enp0s3
 vip_address: 172.16.35.10
 lb_secure_port: 6443
 
-#offline deploy
+# offline deploy
 
 # Kubernetes extra addons
 enable_ingress: false
